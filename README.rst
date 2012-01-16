@@ -16,7 +16,7 @@ Add the app to your ``INSTALLED_APPS`` setting::
 Settings
 ========
 
-Add the server configuration to your settings file:
+Add the server configuration to your settings file::
 
     DEPLOYS = {
         'default': {
