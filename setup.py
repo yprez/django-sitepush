@@ -1,11 +1,11 @@
-from distutils.core import setup
+from setuptools import setup, find_packages
 
 setup(
     name='django-sitepush',
     author='Yuri Prezument',
     author_email='y@yprez.com',
-    version='0.0.1dev1',
-    packages=['sitepush', ],
+    version='0.0.1dev3',
+    packages=find_packages(),
     license='ISC',
     url='http://github.com/yprez/django-sitepush',
     description='Redeploy Django projects using management commands',
