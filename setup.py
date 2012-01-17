@@ -8,7 +8,7 @@ setup(
     packages=['sitepush'],
     license='ISC',
     url='http://github.com/yprez/django-sitepush',
-    description='TODO',
+    description='Redeploy Django projects using management commands',
     long_description=open('README.rst').read(),
     install_requires=[
         'Django >= 1.3',
