@@ -2,6 +2,9 @@
 django-sitepush
 ===============
 
+**Warning:** This package is still in alpha, and not really ready for use.
+
+
 Installation
 ============
 
