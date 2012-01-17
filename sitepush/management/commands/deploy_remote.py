@@ -33,14 +33,16 @@ class Command(BaseCommand):
         env.host_string = '{0}@{1}'.format(server['USER'], server['HOST'])
         self.stdout.write('Depoloying to "{0}"...\n'.format(server_name))
 
-        with cd(server['DIR']), prefix('workon {0}'.format(server['ENV'])):
-            cmd = ('python manage.py deploy_local --servername={servername} '
-                   '{noreqs} --settings={settings}'). \
-                   format(noreqs='--noreqs' if noreqs else '',
-                          settings=server['SETTINGS'] if 'SETTINGS' in server
-                                                      else 'settings',
-                          servername=server_name)
-            run(cmd)
+        cmd = ('python manage.py deploy_local --servername={servername} '
+               '{noreqs} --settings={settings}'). \
+               format(noreqs='--noreqs' if noreqs else '',
+                      settings=server['SETTINGS'] if 'SETTINGS' in server
+                                                  else 'settings',
+                  servername=server_name)
+
+        with cd(server['DIR']):
+            with prefix('workon {0}'.format(server['ENV'])):
+                run(cmd)
 
         self.stdout.write('Deployed successfully\n')
         self.stdout.write('Time elapsed: {0} seconds\n\n'.\
