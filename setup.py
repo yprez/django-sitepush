@@ -5,7 +5,7 @@ setup(
     author='Yuri Prezument',
     author_email='y@yprez.com',
     version='0.0.1dev1',
-    packages=['sitepush'],
+    packages=['sitepush', ],
     license='ISC',
     url='http://github.com/yprez/django-sitepush',
     description='Redeploy Django projects using management commands',
