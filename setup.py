@@ -4,7 +4,7 @@ setup(
     name='django-sitepush',
     author='Yuri Prezument',
     author_email='y@yprez.com',
-    version='0.1.0dev',
+    version='0.0.1dev1',
     packages=['sitepush'],
     license='ISC',
     url='http://github.com/yprez/django-sitepush',
