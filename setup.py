@@ -15,7 +15,7 @@ setup(
         'fabric >= 1.3.3',
     ],
     classifiers=(
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 2 - Pre-Alpha',
         'Framework :: Django',
         'Intended Audience :: Developers',
         'Natural Language :: English',
