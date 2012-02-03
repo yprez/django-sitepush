@@ -18,6 +18,25 @@ The remote command will pull the source code from Git, run all necessary Django
 management commands, and restart the server.
 
 
+Why?
+----
+
+Because it's faster.
+
+When the you run everything remotely it only takes about 10 seconds to deploy
+an instance.
+
+
+What commands will run?
+-----------------------
+
+- git pull
+- syncdb
+- migrate
+- collectstatic
+- restart server (webserver dependent)
+
+
 
 Requirements
 ============
@@ -56,8 +75,8 @@ Add the server configuration to your settings file::
             'ENV': 'myvirtualenv',         # virtualenv used in the project
             'WEBSERVER': 'gunicorn',       # webserver - 'apache' or 'gunicorn'
 
-            'PID_FILE': '/tmp/gunicorn.pid',  # Gunicorn pid file location
-            'WSGI_FILE': 'deploy/wsgi.py',    # Apache wsgi file location
+            'PID_FILE': '/tmp/gunicorn.pid',  # Gunicorn pid file path
+            'WSGI_FILE': 'deploy/wsgi.py',    # Apache wsgi file path
         },
     }
 
@@ -65,4 +84,3 @@ The ``PID_FILE`` / ``WSGI_FILE`` settings should be set depending on the web
 server you're using.
 
 ``BRANCH`` is optional and defaults to ``master``
-
