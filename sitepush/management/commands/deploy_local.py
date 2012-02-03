@@ -44,8 +44,8 @@ class Command(BaseCommand):
         # Reload the app in the webserver
         ws = server['WEBSERVER']
         if ws == 'apache':
-            local('touch deploy/wsgi.py')  # reload wsgi
+            local('touch {0}'.format(server['WSGI_FILE']))  # reload wsgi
         elif ws == 'gunicorn':
-            local('sudo kill -HUP `cat {0}`'.format(server['PIDFILE']))
+            local('sudo kill -HUP `cat {0}`'.format(server['PID_FILE']))
         else:
             self.stderr.write('Unknown webserver type!')
