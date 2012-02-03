@@ -2,7 +2,16 @@
 django-sitepush
 ===============
 
+*TODO: Short description*
+
 **Warning:** This package is still in alpha, and not really ready for use.
+
+
+Requirements
+============
+
+- Django
+- A deployed instance running:
 
 
 Installation

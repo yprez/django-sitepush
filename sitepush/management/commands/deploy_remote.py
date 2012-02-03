@@ -33,7 +33,7 @@ class Command(BaseCommand):
         env.host_string = '{0}@{1}'.format(server['USER'], server['HOST'])
         self.stdout.write('Depoloying to "{0}"...\n'.format(server_name))
 
-        cmd = ('python manage.py deploy_local --servername={servername} '
+        cmd = ('python manage.py deploy_local --servername={servername} ' +
                '{noreqs} --settings={settings}'). \
                format(noreqs='--noreqs' if noreqs else '',
                       settings=server['SETTINGS'] if 'SETTINGS' in server
