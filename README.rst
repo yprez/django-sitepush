@@ -2,16 +2,32 @@
 django-sitepush
 ===============
 
-*TODO: Short description*
+Redeploy Django projects using management commands
 
 **Warning:** This package is still in alpha, and not really ready for use.
+
+
+
+What does it do?
+================
+
+Using Fabric to run a management command on each remote instance to redeploy
+itself.
+
+The remote command will pull the source code from Git, run all necessary Django
+management commands, and restart the server.
+
 
 
 Requirements
 ============
 
-- Django
-- A deployed instance running:
+- A deployed instance running :
+    - Apache with mod_WSGI
+    - GUnicorn
+- Fabric
+- A Git hosted repository for the project
+
 
 
 Installation
