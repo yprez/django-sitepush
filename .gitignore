@@ -1,2 +1,5 @@
 *.pyc
 *.nja
+build
+dist
+MANIFEST
