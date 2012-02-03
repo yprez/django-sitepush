@@ -41,7 +41,7 @@ What commands will run?
 Requirements
 ============
 
-- A deployed instance running :
+- A deployed instance running either:
     - Apache with mod_WSGI
     - GUnicorn
 - Fabric
@@ -84,3 +84,14 @@ The ``PID_FILE`` / ``WSGI_FILE`` settings should be set depending on the web
 server you're using.
 
 ``BRANCH`` is optional and defaults to ``master``
+
+
+Usage
+=====
+
+::
+
+    python manage.py deploy_remote default
+
+    # Or
+    python manage.py deploy_remote srv1 srv2 #...
