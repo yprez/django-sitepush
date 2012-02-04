@@ -30,11 +30,12 @@ an instance.
 What commands will run?
 -----------------------
 
-- git pull
-- syncdb
-- migrate
-- collectstatic
-- restart server (webserver dependent)
+- ``git pull``
+- ``pip install -r requirements.txt``
+- ``syncdb``
+- ``migrate``
+- ``collectstatic``
+- ``restart server (webserver dependent)``
 
 
 
@@ -94,4 +95,13 @@ Usage
     python manage.py deploy_remote default
 
     # Or
-    python manage.py deploy_remote srv1 srv2 #...
+    python manage.py deploy_remote srv1 srv2 #...'
+
+    # Don't install requirements:
+    python manage.py deploy_remote default --noreqs
+
+
+Future ideas
+============
+
+- Deploy from a view (url).
