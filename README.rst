@@ -99,3 +99,6 @@ Usage
 
     # Don't install requirements:
     python manage.py deploy_remote default --noreqs
+
+    # Deploy all remote instances:
+    python manage.py deploy_remote --all
