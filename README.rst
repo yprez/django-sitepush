@@ -99,9 +99,3 @@ Usage
 
     # Don't install requirements:
     python manage.py deploy_remote default --noreqs
-
-
-Future ideas
-============
-
-- Deploy from a view (url).
