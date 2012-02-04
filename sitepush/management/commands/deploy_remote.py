@@ -36,7 +36,7 @@ class Command(BaseCommand):
         for n in not_found:
             self.stderr.write('Error - server {0} not found\n'.format(n))
 
-        for server, name in servers.items():
+        for name, server in servers.items():
             self.deploy(server, name, noreqs)
 
     def deploy(self, server, server_name, noreqs=False):
