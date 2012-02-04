@@ -14,19 +14,30 @@ class Command(BaseCommand):
     option_list = BaseCommand.option_list + (
         make_option('--noreqs', action='store_true', dest='reqs',
                     default=False, help='Update requirements'),
+        make_option('--all', action='store_true', dest='all',
+                    default=False, help='Update all instances'),
     )
 
     def handle(self, *args, **options):
         noreqs = options.get('reqs')
-        if not args:
+        all = options.get('all')
+
+        if not args and not all:
             self.stderr.write('No servers selected\n')
             return
 
-        for n in args:
-            if n in settings.DEPLOYS:
-                self.deploy(settings.DEPLOYS[n], n, noreqs)
-            else:
-                self.stderr.write('Error - server {0} not found\n'.format(n))
+        if all:
+            servers = settings.DEPLOYS
+        else:
+            servers = {k: v for k, v in settings.DEPLOYS if k in args}
+
+        not_found = set(args) - set(servers.keys())
+
+        for n in not_found:
+            self.stderr.write('Error - server {0} not found\n'.format(n))
+
+        for server, name in servers.items():
+            self.deploy(server, name, noreqs)
 
     def deploy(self, server, server_name, noreqs=False):
         starttime = time.time()
