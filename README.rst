@@ -18,13 +18,11 @@ The remote command will pull the source code from Git, run all necessary Django
 management commands, and restart the server.
 
 
-Why?
-----
+Why not just write a Fabric script?
+-----------------------------------
 
-Because it's faster.
-
-When the you run everything remotely it only takes about 10 seconds to deploy
-an instance.
+It's faster. When the you run everything remotely it only takes about 10 seconds
+to deploy an instance.
 
 
 What commands will run?
@@ -46,6 +44,7 @@ Requirements
     - Apache with mod_WSGI
     - GUnicorn
 - Fabric
+- A virtualenv dedicated to the project.
 - A Git hosted repository for the project
 
 
