@@ -4,12 +4,9 @@ django-sitepush
 
 Redeploy Django projects using management commands
 
-**Warning:** This package is still in alpha, and not really ready for use.
-
-
 
 What does it do?
-================
+----------------
 
 Using Fabric to run a management command on each remote instance to redeploy
 itself.
