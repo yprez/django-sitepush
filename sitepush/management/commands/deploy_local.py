@@ -29,8 +29,6 @@ class Command(BaseCommand):
 
         server = settings.DEPLOYS[server_name]
 
-        local('git pull origin {0}'.format(server['BRANCH']))
-
         if not noreqs:
             local('pip install -r requirements.txt')
 

@@ -52,6 +52,8 @@ class Command(BaseCommand):
                   servername=server_name)
 
         with cd(server['DIR']):
+            run('git pull origin {0}'.format(server['BRANCH']))
+
             with prefix('workon {0}'.format(server['ENV'])):
                 run(cmd)
 
