@@ -29,7 +29,8 @@ class Command(BaseCommand):
         if all:
             servers = settings.DEPLOYS
         else:
-            servers = {k: v for k, v in settings.DEPLOYS.items() if k in args}
+            servers = dict([(k, v) for k, v in settings.DEPLOYS.items()
+                                   if k in args])
 
         not_found = set(args) - set(servers.keys())
 
