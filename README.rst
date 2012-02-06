@@ -21,8 +21,8 @@ management commands, and restart the server.
 Why not just write a Fabric script?
 -----------------------------------
 
-It's faster. When the you run everything remotely it only takes about 10 seconds
-to deploy an instance.
+It's faster. When the you run everything remotely it only takes about 10
+seconds to deploy an instance.
 
 
 What commands will run?
