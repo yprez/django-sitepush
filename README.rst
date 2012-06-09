@@ -14,6 +14,8 @@ itself.
 The remote command will pull the source code from Git, run all necessary Django
 management commands, and restart the server.
 
+It's intended for small to medium scale apps.
+
 
 Why not just write a Fabric script?
 -----------------------------------
