@@ -4,7 +4,7 @@ setup(
     name='django-sitepush',
     author='Yuri Prezument',
     author_email='y@yprez.com',
-    version='0.1dev2',
+    version='0.1',
     packages=find_packages(),
     license='ISC',
     url='http://github.com/yprez/django-sitepush',
@@ -15,7 +15,7 @@ setup(
         'fabric >= 1.3.3',
     ],
     classifiers=(
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 3 - Alpha',
         'Framework :: Django',
         'Intended Audience :: Developers',
         'Natural Language :: English',
